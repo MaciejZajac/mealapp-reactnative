@@ -5,7 +5,7 @@ import AppLoading from 'expo-app-loading';
 import MealsNavigator from './navigation/MealsNavigator';
 
 const fetchFonts = () => {
-  Font.loadAsync({
+  return Font.loadAsync({
     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
     'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
   });
@@ -20,6 +20,7 @@ export default function App() {
         onError={() => console.log('err', err)}
       />
     );
+  } else {
+    return <MealsNavigator />;
   }
-  return <MealsNavigator />;
 }
